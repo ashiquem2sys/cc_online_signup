@@ -857,6 +857,8 @@
 							{
 								console.log(jqXHR);
 								console.log(textStatus);
+								$('#signup_notification_failure').show();
+								$('#fmessage').text(textStatus);
 							}
 						});		
 					}						
