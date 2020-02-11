@@ -604,6 +604,8 @@
 		<script src="https://player.vimeo.com/api/player.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
+				// Image flag initial
+				var imageFlag = true;
 				// Initially first select list item 1 and play the first video
 				$("#valign-nav").children(".nav-link:first-child").addClass("active"); 
 				var firstSrc = $("#valign-nav").children(".nav-link").attr("data-isrc");
@@ -770,13 +772,20 @@
 
 				$("#fileinput").change(function() {
 					$('.temp-logo-holder').show();
+					var myFile = $(this).prop('files');
+					var fileSize = myFile[0].size/1024;
+					if ( fileSize > 2048 )
+						imageFlag = false;
+					else 
+						imageFlag = true;
 					readURL(this);
 				});
 
-				$(".custom_built_in_logo").click(function(){
+				$(".custom_built_in_logo").click(function() {
 					var img = document.querySelector( '#thumbnail' );
 					var dataUrl = getDataUrl(img);
 					$('#thumbnail_hidden_base64').val(dataUrl);
+					imageFlag = true;
 				});
 
 				var getDataUrl = function(img) {
@@ -808,6 +817,11 @@
 						$('.browse-btn button').css({'border': '1px solid red'});
 						$('#signup_notification_failure').show();
 						$('#fmessage').text("Please select company logo!");
+					}
+					else if ( imageFlag == false ) {
+						$('.browse-btn button').css({'border': '1px solid red'});
+						$('#signup_notification_failure').show();
+						$('#fmessage').text("Please select company logo again! Image size cannot exceed 2MB!");
 					}
 					else {
 						var formData = { Name: name, Address: address, Phone: phone, Country: country, Email: email, Description: description, Photo: thumbnail_hidden_base64 }; //Array 
