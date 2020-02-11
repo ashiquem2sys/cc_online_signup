@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /demo/
+Disallow: /test/
+Disallow: /testcc/
+Disallow: /resources-for-partners/
+Disallow: /old_root_files/
+Disallow: /logo/
+Disallow: /email_template_images/
+Disallow: /ccadmin/
+Disallow: /brochures/
+Disallow: /ccadmin/
+Disallow: /app-version-resources/
+Disallow: /app/

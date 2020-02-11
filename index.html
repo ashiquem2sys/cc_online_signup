@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW" />
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+		<title>CircleCare Videos Signup</title>
+		<style type="text/css">
+			.top-bar .custom-logo { max-width: 140px; }
+			.top-bar .tagline { font-size: 12px; letter-spacing: -.5px; color: #18394E; }
+			.custom-nav-wrap { min-height: 75px; }
+			.top-bar .custom-nav ul { margin: 0; padding: 0; list-style: none; }
+			.top-bar .custom-nav ul li { display: inline; margin: 0 6px; }
+			.top-bar .custom-nav ul li a { text-decoration: none; color: #18394E; text-transform: uppercase; font-size: 12px; transition: all .3s; }
+			.top-bar .custom-nav ul li a:hover { color: #a3a3a3; } 
+			.custom-nav .nav-link, .custom-nav .pricing { cursor: pointer; border: 1px solid #eee; color: #18394E; border-radius: 50px; margin: 6px 0; font-size: 14px; text-align: center; text-transform: capitalize; position: relative; overflow: hidden; transition: all .5s; }
+			.custom-nav .pricing { text-align: left; display: block; padding: .5rem 1rem; }
+			.custom-nav span.nav-link { text-align: left; }
+			.custom-nav span.nav-link .fa { font-size: 16px; color: #ddd; }
+			.custom-nav .nav-link:hover, .custom-nav .pricing:hover { border: 1px solid #18394E; background: #18394E; color: #fff; padding-left: 8px; }
+			.nav-link.active:after, .pricing.active:after { width: 30%; height: 200%; background: rgba(255, 255, 255, 0.1); z-index: 1; right: 0; top: 0; margin: -5px 0 0 -5px; -webkit-transform-origin: 0 0; -webkit-transform: rotate(-20deg); -moz-transform-origin: 0 0; -moz-transform: rotate(-20deg); -ms-transform-origin: 0 0; -ms-transform: rotate(-20deg); transform-origin: 0 0; transform: rotate(-20deg); position: absolute; content: ''; transition: all .3s; }
+			.nav-link.active:hover:after, .pricing.active:hover:after { width: 35%; }
+			.social-set span { display: block; color: #a3a3a3; font-size: 13px; }
+			.social-set a { color: #a3a3a3; text-decoration: none; font-size: 20px; display: inline-block; margin: 3px; }
+			.screen-wrap { min-height: calc(100vh - 165px); }
+			.active { background: #18394E; color: #fff !important; }
+			.custom-nav .nav-link:last-child { border: 1px solid #007bff; background: #007bff; color: #fff; }
+			.custom-card { margin: 6px 0; }
+			.pricing-wrap { display: none; }
+			.pricing-wrap { min-height: 415px; }
+			.signup-wrap { display: none; }
+			.signup-wrap .screen-wrap { min-height: calc(80vh - 165px); }
+			.custom-vh.custom-success-message-wrapper { min-height: auto; }
+			.signup-link { display: block; cursor: pointer; border: 1px solid #eee; border-radius: 50px; margin: 6px 0; font-size: 14px; text-transform: capitalize; position: relative; overflow: hidden; transition: all .5s;padding: .5rem 1rem; }
+			.screen-wrap .form-group { margin-bottom: 10px; position: relative; }
+			.screen-wrap .form-input { padding-top: 21px; }
+			.screen-wrap .form-label { position: absolute; transition: 0.25s ease; -moz-transition: 0.25s ease; -webkit-transition: 0.25s ease; -o-transition: 0.25s ease; -ms-transition: 0.25s ease; color: #bebebe; left: 0; top: 23px; }
+			.screen-wrap input { transition: 0.3s ease; -moz-transition: 0.3s ease; -webkit-transition: 0.3s ease; -o-transition: 0.3s ease; -ms-transition: 0.3s ease; padding-top: 10px; -webkit-appearance: none; }
+			.screen-wrap input:focus + .form-label, .screen-wrap input:valid + .form-label, .screen-wrap textarea:focus + .form-label, .screen-wrap textarea:valid + .form-label { top: 1px; font-size: 14px; }
+			.screen-wrap input, .screen-wrap select, .screen-wrap textarea { box-sizing: border-box; width: 100%; display: block; border: none; color: #18394E; background: transparent; border-bottom: 1px solid #ddd; padding: 4px 0; }
+			.screen-wrap input:focus, .screen-wrap select:focus, .screen-wrap textarea:focus { border-bottom: 1px solid #ffbf0e; outline: none; }
+			.screen-wrap input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px transparent inset; }
+			.screen-wrap input::-webkit-input-placeholder { color: #bebebe; }
+			.screen-wrap input::-moz-placeholder { color: #bebebe; }
+			.screen-wrap input:-ms-input-placeholder { color: #bebebe; }
+			.screen-wrap input:-moz-placeholder { color: #bebebe; }
+			.screen-wrap .submit { float: right; width: auto; background: #18394E; color: #fff; padding: 15px 43px; font-weight: bold; border: none; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; -ms-border-radius: 5px; cursor: pointer; }
+			.screen-wrap .submit:hover { background: #ffbf0e; color: #18394E; }
+			.screen-wrap .select-list { position: relative; display: inline-block; width: 100%; }
+			.screen-wrap .form-group i.fa { position: absolute; right: 0; bottom: 10px; color: #d1d1d1; font-size: 18px; }
+			.screen-wrap .form-group i.fa.fa-pencil-square-o { bottom: 30px; }
+
+			.screen-wrap .form-group select#id_Country { color: #bebebe; }
+			.screen-wrap .form-group select#id_Country:focus { color: #18394E; }
+			.temp-logo-wrap { display: none; }
+			.temp-logo-wrap img { width: 64px; height: 64px; object-fit: contain; }
+
+			.custom-form-wrap span { font-weight: 100; }
+			.active { background: #18394E; color: #fff !important; }
+			.custom-nav .nav-link:last-child { border: 1px solid #007bff; background: #007bff; color: #fff; }
+			.custom-card { margin: 6px 0; border: none; }
+
+			.modal-img-wrap img { width: 64px; height: 64px; object-fit: contain; cursor: pointer; }
+			.temp-logo-holder { display: none; }
+
+			/* signup css */
+			.mwrapper{width: 100%;}
+			#signup_notification_wrapper{float: left; width: 75%;}
+			#signup_notification_success{float: left; color: green;}
+			#signup_notification_failure{float: left; color: red;}
+			#signup_notification #submit{float: right;}
+
+			/*pricing css*/
+			.custom-vh { min-height: 400px; }
+			h3.price-rate { font-size: 44px; text-transform: uppercase; font-weight: 700; color: #18394E; }
+			h3.price-msg { font-size: 28px; text-transform: capitalize; color: #888; font-weight: 300; }
+			button.price-signup-btn { background: #ffbf0e; color: #18394E; font-size: 28px; min-width: 240px; font-weight: 700; padding: 10px 0; transition: all .3s; }
+			button.price-signup-btn:hover { color: #FFF; background: #18394E; }
+			h3.price-msg span { border-bottom: 1px solid #18394E; padding: 0 12px 2px 12px; font-weight: 400; font-style: italic; color: #18394E; }
+
+			.button-wrapper { position: relative; width: 150px; text-align: center; margin-top: 10px; }
+            .button-wrapper span.label { position: relative; z-index: 0; display: inline-block; width: 100%; background: #00bfff; cursor: pointer; color: #fff; padding: 10px 0; text-transform:uppercase; font-size:12px; cursor: pointer; }
+            #fileinput { display: inline-block; position: absolute; z-index: 1; width: 100%; height: 38px; top: 0; left: 0; opacity: 0; cursor: pointer; }
+			#thumbnail{object-fit: contain;}
+			
+			.footer-wrap { position: absolute; width: 100%; }
+			.footer-wrap .custom-footer { background: #ffbf0e; color: #18394E; font-size: 13px; min-height: 70px; }
+			.footer-wrap .custom-footer p { margin-bottom: 4px; }
+			.footer-wrap .custom-footer .footer-menu a { text-decoration: none; color: #18394E; font-size: 12px; transition: all .3s; }
+			.footer-wrap .custom-footer .footer-menu a:hover { color: #000; }
+
+			@media only screen 
+			and (min-device-width : 768px) 
+			and (max-device-width : 1024px)  {
+				.ipad-adjustment { padding: 0; }
+				.custom-nav .nav-link, .custom-nav .pricing { font-size: 12px; }
+			}
+
+			@media only screen 
+			and (min-device-width : 768px) 
+			and (max-device-width : 1024px) 
+			and (orientation : portrait) { 
+				.temp-logo-holder, .signup-heading { width: 100%; }
+				#thumbnail { display: table; margin: 0 auto; }
+			}
+
+			@media (max-width: 320px), (max-width: 360px), (max-width: 375px), (max-width: 400px), (max-width: 480px) {
+				#valign-nav { overflow: hidden; display: block; margin-bottom: 0px; }
+				#video-screen, .pricing-wrap { min-height: 185px; height: auto; }
+				.social-set span { display: inline; }
+				h2.head-signup span { display: inline-block; }
+				h3.price-rate { font-size: 30px; }
+				h3.price-msg { font-size: 22px; }
+				h3.price-msg span { display: block; }
+				.custom-screen-wrap-c12, .custom-screen-wrap-c12 .card-body { padding: 0; }
+				.temp-logo-holder { width: 100%; }
+				#thumbnail { display: table; margin: 0 auto; }
+				h3.price-msg span { border-bottom: none; padding-bottom: 0; display: block; line-height: 2em; font-size: 28px; }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top-bar shadow-sm">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="d-flex">
+							<div class="p-0">
+								<div class="logo-wrap pt-3">
+									<a href="http://www.mycirclecare.com/">
+										<img src="http://www.mycirclecare.com/wp-content/uploads/2019/02/CircleCare_logo_name.png" alt="CircleCare - Live Healthy. Earn Rewards." class="img-fluid custom-logo" />
+									</a>
+									<h3 class="tagline">Live Healthy. Earn Rewards.</h3>
+								</div>
+							</div>
+							<div class="ml-auto p-0">
+								<div class="d-flex justify-content-end align-items-center custom-nav-wrap">
+									<div class="custom-nav">
+										<ul>
+											<li><a href="http://www.mycirclecare.com/">Home</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="screen-wrap d-flex align-content-center flex-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 align-self-center ipad-adjustment">
+						<nav id="valign-nav" class="nav flex-column custom-nav">
+							<span id="nav-link-1" class="nav-link" data-isrc="https://player.vimeo.com/video/387935626"><i class="fa fa-play-circle" aria-hidden="true"></i> Why Circlecare</span>
+							<span id="nav-link-2" class="nav-link" data-isrc="https://player.vimeo.com/video/387934692?autoplay=true"><i class="fa fa-play-circle" aria-hidden="true"></i> Physical Wellness</span>
+							<span id="nav-link-3" class="nav-link" data-isrc="https://player.vimeo.com/video/387933338?autoplay=true"><i class="fa fa-play-circle" aria-hidden="true"></i> Employee Engagement</span>
+							<span id="nav-link-4" class="nav-link" data-isrc="https://player.vimeo.com/video/387937389?autoplay=true"><i class="fa fa-play-circle" aria-hidden="true"></i> Occupational Wellness</span>
+							<span id="nav-link-5" class="pricing"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pricing</span>
+							<span class="btn-primary signup-link"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</span>
+						</nav>
+						<div class="social-set pt-4">
+							<span>Stay Tuned:</span>
+							<a href="https://twitter.com/circlecareapp"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							<a href="https://www.facebook.com/CircleCareApp"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a href="https://www.instagram.com/circlecareapp/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							<a href="https://www.youtube.com/circlecareapp"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+							<a href="https://www.linkedin.com/company/circlecareapp"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+							<a href="http://www.mycirclecare.com/blog/"><i class="fa fa-rss" aria-hidden="true"></i></a>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="card custom-card shadow-sm">
+							<div class="card-body">
+								<div id="card-body-zone" class="card-text">
+									<iframe id="video-screen" src="" width="100%" height="415" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+									<div class="pricing-wrap">
+										<div class="d-flex justify-content-center align-items-center custom-vh">
+											<div class="p-2 text-center">
+												<h3 class="price-rate">$2 USD per user, per month.</h3>
+												<h3 class="price-msg">No long term contract. <span>FREE Trial!</span> No Credit Card</span></h3>
+												<div class="pt-4"><button id="load_signup" class="btn price-signup-btn">Sign Up!</button></div>
+											</div>
+										</div>
+									</div>
+									<div class="signup-wrap">
+										<!-- SIGNUP FORM DIV -->
+										<div class="screen-wrap d-flex align-content-center flex-wrap">
+											<div class="container">
+												<div class="row">
+													
+													<div class="col-md-12 custom-screen-wrap-c12">
+														<div class="card custom-card">
+															<div class="card-body">
+																<div class="card-text">
+																	<div class="justify-content-center align-items-center custom-vh custom-success-message-wrapper">
+																		<div class="p-2 text-center">
+																			<h3 class="price-rate"><i class="fa fa-check-circle-o"></i> Signed up successfully.</h3>
+																			<h3 class="price-msg">Please check your email for login process.</h3>
+																		</div>
+																	</div>
+
+																	<div class="custom-form-wrap">
+								
+																		<div class="d-flex flex-wrap custom-width">
+																			<div class="py-2 temp-logo-holder">
+																				<div class="temp-logo-holder-img">
+																					<img width="84" height="84" src="" id="thumbnail">
+																				</div>
+																			</div>
+																			<div class="py-2 ml-auto signup-heading">
+																				<h2 class="text-center my-4 head-signup">Corporate Group <span>Sign Up</span></h2>
+																			</div>
+																		</div>
+								
+																		<form action="#" method="post" name="channelForm" id="signup-form">											
+																			<div class="form-group form-input">
+																				<div class="d-flex flex-wrap">
+																					<div class="py-2">
+																						<p class="mb-0">Select temporary logo for the Group <br><sup>You can change it later</sup></p>
+																					</div>
+																					<div class="py-2 ml-auto browse-btn">
+																						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">Browse Logo</button>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="form-group form-input">
+																				<i class="fa fa-users" aria-hidden="true"></i>
+																				<input type="text" name="Name" id="id_Name" value="" required />
+																				<label for="id_Name" class="form-label">Company Name</label>
+																			</div>
+																			<div class="form-group form-input">
+																				<i class="fa fa-home" aria-hidden="true"></i>
+																				<input type="text" name="Address" id="id_Address" value="" required />
+																				<label for="id_Address" class="form-label">Address</label>
+																			</div>
+																			<div class="form-group form-input">
+																				<i class="fa fa-phone" aria-hidden="true"></i>
+																				<input type="text" name="Phone" id="id_Phone" value="" required />
+																				<label for="id_Phone" class="form-label">Phone</label>
+																			</div>
+																			<div class="form-group form-input">
+																				<div class="select-list">
+																					<i class="fa fa-flag" aria-hidden="true"></i>
+																					<select name="Country" id="id_Country" required>
+																						<option value="">Country</option>
+																						<option value="Afghanistan">Afghanistan</option>
+																						<option value="Åland Islands">Åland Islands</option>
+																						<option value="Albania">Albania</option>
+																						<option value="Algeria">Algeria</option>
+																						<option value="American Samoa">American Samoa</option>
+																						<option value="Andorra">Andorra</option>
+																						<option value="Angola">Angola</option>
+																						<option value="Anguilla">Anguilla</option>
+																						<option value="Antarctica">Antarctica</option>
+																						<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+																						<option value="Argentina">Argentina</option>
+																						<option value="Armenia">Armenia</option>
+																						<option value="Aruba">Aruba</option>
+																						<option value="Australia">Australia</option>
+																						<option value="Austria">Austria</option>
+																						<option value="Azerbaijan">Azerbaijan</option>
+																						<option value="Bahamas">Bahamas</option>
+																						<option value="Bahrain">Bahrain</option>
+																						<option value="Bangladesh">Bangladesh</option>
+																						<option value="Barbados">Barbados</option>
+																						<option value="Belarus">Belarus</option>
+																						<option value="Belgium">Belgium</option>
+																						<option value="Belize">Belize</option>
+																						<option value="Benin">Benin</option>
+																						<option value="Bermuda">Bermuda</option>
+																						<option value="Bhutan">Bhutan</option>
+																						<option value="Bolivia">Bolivia</option>
+																						<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+																						<option value="Botswana">Botswana</option>
+																						<option value="Bouvet Island">Bouvet Island</option>
+																						<option value="Brazil">Brazil</option>
+																						<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+																						<option value="Brunei Darussalam">Brunei Darussalam</option>
+																						<option value="Bulgaria">Bulgaria</option>
+																						<option value="Burkina Faso">Burkina Faso</option>
+																						<option value="Burundi">Burundi</option>
+																						<option value="Cambodia">Cambodia</option>
+																						<option value="Cameroon">Cameroon</option>
+																						<option value="Canada">Canada</option>
+																						<option value="Cape Verde">Cape Verde</option>
+																						<option value="Cayman Islands">Cayman Islands</option>
+																						<option value="Central African Republic">Central African Republic</option>
+																						<option value="Chad">Chad</option>
+																						<option value="Chile">Chile</option>
+																						<option value="China">China</option>
+																						<option value="Christmas Island">Christmas Island</option>
+																						<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+																						<option value="Colombia">Colombia</option>
+																						<option value="Comoros">Comoros</option>
+																						<option value="Congo">Congo</option>
+																						<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+																						<option value="Cook Islands">Cook Islands</option>
+																						<option value="Costa Rica">Costa Rica</option>
+																						<option value="Cote D'ivoire">Cote D'ivoire</option>
+																						<option value="Croatia">Croatia</option>
+																						<option value="Cuba">Cuba</option>
+																						<option value="Cyprus">Cyprus</option>
+																						<option value="Czech Republic">Czech Republic</option>
+																						<option value="Denmark">Denmark</option>
+																						<option value="Djibouti">Djibouti</option>
+																						<option value="Dominica">Dominica</option>
+																						<option value="Dominican Republic">Dominican Republic</option>
+																						<option value="Ecuador">Ecuador</option>
+																						<option value="Egypt">Egypt</option>
+																						<option value="El Salvador">El Salvador</option>
+																						<option value="Equatorial Guinea">Equatorial Guinea</option>
+																						<option value="Eritrea">Eritrea</option>
+																						<option value="Estonia">Estonia</option>
+																						<option value="Ethiopia">Ethiopia</option>
+																						<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+																						<option value="Faroe Islands">Faroe Islands</option>
+																						<option value="Fiji">Fiji</option>
+																						<option value="Finland">Finland</option>
+																						<option value="France">France</option>
+																						<option value="French Guiana">French Guiana</option>
+																						<option value="French Polynesia">French Polynesia</option>
+																						<option value="French Southern Territories">French Southern Territories</option>
+																						<option value="Gabon">Gabon</option>
+																						<option value="Gambia">Gambia</option>
+																						<option value="Georgia">Georgia</option>
+																						<option value="Germany">Germany</option>
+																						<option value="Ghana">Ghana</option>
+																						<option value="Gibraltar">Gibraltar</option>
+																						<option value="Greece">Greece</option>
+																						<option value="Greenland">Greenland</option>
+																						<option value="Grenada">Grenada</option>
+																						<option value="Guadeloupe">Guadeloupe</option>
+																						<option value="Guam">Guam</option>
+																						<option value="Guatemala">Guatemala</option>
+																						<option value="Guernsey">Guernsey</option>
+																						<option value="Guinea">Guinea</option>
+																						<option value="Guinea-bissau">Guinea-bissau</option>
+																						<option value="Guyana">Guyana</option>
+																						<option value="Haiti">Haiti</option>
+																						<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+																						<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+																						<option value="Honduras">Honduras</option>
+																						<option value="Hong Kong">Hong Kong</option>
+																						<option value="Hungary">Hungary</option>
+																						<option value="Iceland">Iceland</option>
+																						<option value="India">India</option>
+																						<option value="Indonesia">Indonesia</option>
+																						<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+																						<option value="Iraq">Iraq</option>
+																						<option value="Ireland">Ireland</option>
+																						<option value="Isle of Man">Isle of Man</option>
+																						<option value="Israel">Israel</option>
+																						<option value="Italy">Italy</option>
+																						<option value="Jamaica">Jamaica</option>
+																						<option value="Japan">Japan</option>
+																						<option value="Jersey">Jersey</option>
+																						<option value="Jordan">Jordan</option>
+																						<option value="Kazakhstan">Kazakhstan</option>
+																						<option value="Kenya">Kenya</option>
+																						<option value="Kiribati">Kiribati</option>
+																						<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+																						<option value="Korea, Republic of">Korea, Republic of</option>
+																						<option value="Kuwait">Kuwait</option>
+																						<option value="Kyrgyzstan">Kyrgyzstan</option>
+																						<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+																						<option value="Latvia">Latvia</option>
+																						<option value="Lebanon">Lebanon</option>
+																						<option value="Lesotho">Lesotho</option>
+																						<option value="Liberia">Liberia</option>
+																						<option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+																						<option value="Liechtenstein">Liechtenstein</option>
+																						<option value="Lithuania">Lithuania</option>
+																						<option value="Luxembourg">Luxembourg</option>
+																						<option value="Macao">Macao</option>
+																						<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+																						<option value="Madagascar">Madagascar</option>
+																						<option value="Malawi">Malawi</option>
+																						<option value="Malaysia">Malaysia</option>
+																						<option value="Maldives">Maldives</option>
+																						<option value="Mali">Mali</option>
+																						<option value="Malta">Malta</option>
+																						<option value="Marshall Islands">Marshall Islands</option>
+																						<option value="Martinique">Martinique</option>
+																						<option value="Mauritania">Mauritania</option>
+																						<option value="Mauritius">Mauritius</option>
+																						<option value="Mayotte">Mayotte</option>
+																						<option value="Mexico">Mexico</option>
+																						<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+																						<option value="Moldova, Republic of">Moldova, Republic of</option>
+																						<option value="Monaco">Monaco</option>
+																						<option value="Mongolia">Mongolia</option>
+																						<option value="Montenegro">Montenegro</option>
+																						<option value="Montserrat">Montserrat</option>
+																						<option value="Morocco">Morocco</option>
+																						<option value="Mozambique">Mozambique</option>
+																						<option value="Myanmar">Myanmar</option>
+																						<option value="Namibia">Namibia</option>
+																						<option value="Nauru">Nauru</option>
+																						<option value="Nepal">Nepal</option>
+																						<option value="Netherlands">Netherlands</option>
+																						<option value="Netherlands Antilles">Netherlands Antilles</option>
+																						<option value="New Caledonia">New Caledonia</option>
+																						<option value="New Zealand">New Zealand</option>
+																						<option value="Nicaragua">Nicaragua</option>
+																						<option value="Niger">Niger</option>
+																						<option value="Nigeria">Nigeria</option>
+																						<option value="Niue">Niue</option>
+																						<option value="Norfolk Island">Norfolk Island</option>
+																						<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+																						<option value="Norway">Norway</option>
+																						<option value="Oman">Oman</option>
+																						<option value="Pakistan">Pakistan</option>
+																						<option value="Palau">Palau</option>
+																						<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+																						<option value="Panama">Panama</option>
+																						<option value="Papua New Guinea">Papua New Guinea</option>
+																						<option value="Paraguay">Paraguay</option>
+																						<option value="Peru">Peru</option>
+																						<option value="Philippines">Philippines</option>
+																						<option value="Pitcairn">Pitcairn</option>
+																						<option value="Poland">Poland</option>
+																						<option value="Portugal">Portugal</option>
+																						<option value="Puerto Rico">Puerto Rico</option>
+																						<option value="Qatar">Qatar</option>
+																						<option value="Reunion">Reunion</option>
+																						<option value="Romania">Romania</option>
+																						<option value="Russian Federation">Russian Federation</option>
+																						<option value="Rwanda">Rwanda</option>
+																						<option value="Saint Helena">Saint Helena</option>
+																						<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+																						<option value="Saint Lucia">Saint Lucia</option>
+																						<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+																						<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+																						<option value="Samoa">Samoa</option>
+																						<option value="San Marino">San Marino</option>
+																						<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+																						<option value="Saudi Arabia">Saudi Arabia</option>
+																						<option value="Senegal">Senegal</option>
+																						<option value="Serbia">Serbia</option>
+																						<option value="Seychelles">Seychelles</option>
+																						<option value="Sierra Leone">Sierra Leone</option>
+																						<option value="Singapore">Singapore</option>
+																						<option value="Slovakia">Slovakia</option>
+																						<option value="Slovenia">Slovenia</option>
+																						<option value="Solomon Islands">Solomon Islands</option>
+																						<option value="Somalia">Somalia</option>
+																						<option value="South Africa">South Africa</option>
+																						<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+																						<option value="Spain">Spain</option>
+																						<option value="Sri Lanka">Sri Lanka</option>
+																						<option value="Sudan">Sudan</option>
+																						<option value="Suriname">Suriname</option>
+																						<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+																						<option value="Swaziland">Swaziland</option>
+																						<option value="Sweden">Sweden</option>
+																						<option value="Switzerland">Switzerland</option>
+																						<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+																						<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+																						<option value="Tajikistan">Tajikistan</option>
+																						<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+																						<option value="Thailand">Thailand</option>
+																						<option value="Timor-leste">Timor-leste</option>
+																						<option value="Togo">Togo</option>
+																						<option value="Tokelau">Tokelau</option>
+																						<option value="Tonga">Tonga</option>
+																						<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+																						<option value="Tunisia">Tunisia</option>
+																						<option value="Turkey">Turkey</option>
+																						<option value="Turkmenistan">Turkmenistan</option>
+																						<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+																						<option value="Tuvalu">Tuvalu</option>
+																						<option value="Uganda">Uganda</option>
+																						<option value="Ukraine">Ukraine</option>
+																						<option value="United Arab Emirates">United Arab Emirates</option>
+																						<option value="United Kingdom">United Kingdom</option>
+																						<option value="United States">United States</option>
+																						<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+																						<option value="Uruguay">Uruguay</option>
+																						<option value="Uzbekistan">Uzbekistan</option>
+																						<option value="Vanuatu">Vanuatu</option>
+																						<option value="Venezuela">Venezuela</option>
+																						<option value="Viet Nam">Viet Nam</option>
+																						<option value="Virgin Islands, British">Virgin Islands, British</option>
+																						<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+																						<option value="Wallis and Futuna">Wallis and Futuna</option>
+																						<option value="Western Sahara">Western Sahara</option>
+																						<option value="Yemen">Yemen</option>
+																						<option value="Zambia">Zambia</option>
+																						<option value="Zimbabwe">Zimbabwe</option>
+																					</select>
+																				</div>
+																			</div>
+																			<div class="form-group form-input">
+																				<i class="fa fa-envelope" aria-hidden="true"></i>
+																				<input type="email" name="Email" id="id_Email" value="" required />
+																				<label for="id_Email" id="lbl_email" class="form-label">Email</label>
+																			</div>
+																			<div class="form-group form-input">
+																				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+																				<textarea name="Description" id="id_Description"></textarea>
+																				<label for="id_Description" class="form-label">Description</label>
+																			</div>
+								
+																			<div class="form-submit">
+																				<div class="d-flex">
+																					<div class="mt-2 mwrapper">
+																						<div id="signup_notification_wrapper">
+																							<div id="ccloader">
+																								<h6><i class="fa fa-hourglass-o"></i> Please wait...</h6>
+																							</div>
+																							<div id="signup_notification_failure">
+																								<h3><i class="fa fa-times-circle-o"></i> Signup failed!</h3>
+																								<h6 id="fmessage">Please check your inputs.</h6>
+																							</div>																						
+																						</div>
+																						<input type="hidden" id="thumbnail_hidden_base64" value="" />																					
+																						<input type="submit" value="Sign Up" class="submit" id="submit" name="submit" />
+																					</div>
+																				</div>					                            
+																			</div>
+								
+																			<!-- Logo Modal -->
+																			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+																				<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																					<h5 class="modal-title" id="exampleModalLongTitle">Browse a logo</h5>
+																					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																					</div>
+																					<div class="modal-body">
+																			
+																						<div class="modal-img-wrap">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/analytics.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/analytics-1.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/archives.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/businessman.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/businessmen.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/certificate.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/chat.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/chat-1.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/contract.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/curriculum.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/curriculum-1.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/folder.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/handshake.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/hierarchical-structure.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/hierarchy.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/hierarchy-1.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/id-card.png">
+																						<img class="img-thumbnail custom_built_in_logo mb-1" src="sample-logos/job-search.png">
+																						<div class="button-wrapper">
+																							<span class="label">Upload File</span>
+																							<input type="file" name="fileinput" id="fileinput" class="upload-box" placeholder="Upload File" accept="image/*;" />
+																						</div>
+																						</div>											
+																					</div>
+																					<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+																					</div>
+																				</div>
+																				</div>
+																			</div>
+																			<!-- Logo Modal End -->
+																		</form>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- SIGNUP FORM DIV ENDS -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-wrap">
+			<div class="custom-footer py-4">
+				<div class="text-center">
+					<p>&copy; Copyright 2015-<span id="curYear"></span> <strong>CircleCare&reg;</strong> - All Rights Reserved. San Francisco, California USA</p>
+					<div class="footer-menu">
+						<a href="http://www.mycirclecare.com/privacy/" target="_blank">Privacy Policy</a> - <a href="http://www.mycirclecare.com/license-terms/" target="_blank">License Terms</a> - <a href="http://www.mycirclecare.com/disclaimer/" target="_blank">Disclaimer</a> - <a href="http://www.mycirclecare.com/rewards-terms-conditions/" target="_blank">Terms & Conditions</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="https://player.vimeo.com/api/player.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// Initially first select list item 1 and play the first video
+				$("#valign-nav").children(".nav-link:first-child").addClass("active"); 
+				var firstSrc = $("#valign-nav").children(".nav-link").attr("data-isrc");
+				// Add autoplay parameter to src
+				$('#video-screen').attr('src', firstSrc);
+				// End trigger of vimeo video
+				var iframe = $('#video-screen');
+				var player = new Vimeo.Player(iframe);
+
+				player.on('ended', function() {
+					// First video complete
+					var cid = "nav-link-1";
+					playNextVideo(cid);
+				});
+
+				var d = new Date();
+				document.getElementById("curYear").innerHTML = d.getFullYear();
+
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+					$('.col-md-9').addClass('order-first');
+					$('.col-md-3').addClass('order-last');
+					$('.social-set').removeClass('pt-4');
+					$('.social-set').addClass('pt-1 text-center');
+				}
+
+				$('.nav-link').click(function() {
+					var cid = $(this).attr('id');
+					if ( cid == "nav-link-1" ) {
+						var isrc = $(this).attr('data-isrc') + "?autoplay=true";
+					}
+					else {
+						var isrc = $(this).attr('data-isrc');
+					}
+					
+					$('#video-screen').remove();
+					$('.pricing-wrap').hide();
+					$('.signup-wrap').hide();
+
+					$('.nav-link.active, .pricing.active').removeClass("active");
+					$(this).addClass("active"); 
+
+					// Create iframe element and add id, src attribute with value
+					$('<iframe id="video-screen" src="'+isrc+'" width="100%" height="415" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>').appendTo('#card-body-zone');
+
+					var iframe = $('#video-screen');
+					var player = new Vimeo.Player(iframe);
+
+					player.on('ended', function() {
+						// This video complete, play the next video
+						// First detect current list item
+						playNextVideo(cid);
+					});
+				});
+
+				function playNextVideo(currentItemId){
+					if ( currentItemId == "nav-link-1" ) {
+						var isrc = $("#nav-link-2").attr('data-isrc');
+						var nextId = "nav-link-2";
+						$('.nav-link.active').removeClass("active"); 
+						$("#"+nextId).addClass("active"); 
+						playVideo(isrc, nextId);
+					}
+					else if ( currentItemId == "nav-link-2" ) {
+						var isrc = $("#nav-link-3").attr('data-isrc');
+						var nextId = "nav-link-3";
+						$('.nav-link.active').removeClass("active"); 
+						$("#"+nextId).addClass("active"); 
+						playVideo(isrc, nextId);
+					}
+					else if ( currentItemId == "nav-link-3" ) {
+						var isrc = $("#nav-link-4").attr('data-isrc');
+						var nextId = "nav-link-4";
+						$('.nav-link.active').removeClass("active"); 
+						$("#"+nextId).addClass("active"); 
+						playVideo(isrc, nextId);
+					}
+					else if ( currentItemId == "nav-link-4" ) {
+						$('#video-screen').remove();
+						$('.pricing-wrap').show();
+						var nextId = "nav-link-5";
+						$('.nav-link.active').removeClass("active"); 
+						$("#"+nextId).addClass("active");
+					}
+				}
+
+				function playVideo(isrc, nextId){
+					$('#video-screen').remove();
+					$('<iframe id="video-screen" src="'+isrc+'" width="100%" height="415" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>').appendTo('#card-body-zone');
+
+					var iframe = $('#video-screen');
+					var player = new Vimeo.Player(iframe);
+
+					player.on('ended', function() {
+						// This video complete, play the next video
+						// First detect current list item
+						playNextVideo(nextId);
+					});
+				}
+
+				$('.pricing').click(function() {
+					$('.nav-link.active').removeClass("active");
+                    $(this).addClass("active"); 					
+					$('#video-screen').hide();
+					$('.pricing-wrap').show();
+					$('#video-screen').remove();
+					$('.signup-wrap').hide();
+				});
+
+				$('.signup-link').click(function() {
+					$('.nav-link.active').removeClass("active");
+					$('.pricing-wrap').hide();
+					$('#video-screen').remove();
+					$('.signup-wrap').show();
+				});
+
+				$('#load_signup').click(function(){
+					$('.pricing.active').removeClass("active");
+					$('.signup-link').trigger('click');
+				});
+
+				// SIGN UP CODE
+				$('#id_Country').blur(function(){
+					if ( $(this).val() != "" ) 
+						$(this).css({'color': '#000'});
+				});
+
+				$('#id_Email').blur(function(){
+                    if ( $(this).val() == "" ) 
+                        $('#lbl_email').css({'top': '26px'});
+                    if ( $(this).val() != "" ) {
+                        $('#lbl_email').css({'top': '0'});
+                        $('#lbl_email').css({'font-size':'14px'});
+                    }
+                });
+
+                $('#id_Email').focus(function(){
+                    if ( $(this).val() == "" ) 
+                        $('#lbl_email').css({'top': '0'});                    
+                });
+
+				$('.custom-logo-browse-btn').click(function() {
+					$('.temp-logo-wrap').toggle();
+				});
+
+				$('.modal-img-wrap img').click(function() {
+					var logoSrc = $(this).attr( "src" );
+					$('.temp-logo-holder img').attr('src', logoSrc);
+					$('.temp-logo-holder').show();
+					$('.custom-width').removeClass('custom-width');
+					$('.custom_built_in_logo').css({'border': '1px solid #dee2e6'});
+					$(this).css({'border': '1px solid #18394e'});
+				});	
+
+				function readURL(input) {
+					if ( input.files && input.files[0] ) {
+						var reader = new FileReader();						
+						reader.onload = function(e) {
+							$('#thumbnail').attr('src', e.target.result);
+							$('#thumbnail_hidden_base64').val(e.target.result);
+						}						
+						reader.readAsDataURL(input.files[0]);
+					}
+				}
+
+				$("#fileinput").change(function() {
+					$('.temp-logo-holder').show();
+					readURL(this);
+				});
+
+				$(".custom_built_in_logo").click(function(){
+					var img = document.querySelector( '#thumbnail' );
+					var dataUrl = getDataUrl(img);
+					$('#thumbnail_hidden_base64').val(dataUrl);
+				});
+
+				var getDataUrl = function(img) {
+					var canvas = document.createElement('canvas');
+					canvas.width = img.width;
+					canvas.height = img.height;
+					var ctx = canvas.getContext('2d');
+					ctx.drawImage( img, 0, 0 ); 
+					return canvas.toDataURL();
+				}
+
+				// Init loader: hide
+				$('.custom-success-message-wrapper').hide();
+				$('#signup_notification_failure').hide();
+				$('#ccloader').hide();
+
+				$('#signup-form').submit(function(e){
+					e.preventDefault();
+					var requestUrl = "https://dev-frm1.circlecare.io/activity/v3.9/api/BinaryData/SignUpCorporateGroup";
+					var name = $('#id_Name').val();
+					var address = $('#id_Address').val();
+					var phone = $('#id_Phone').val();
+					var country = $('#id_Country').val();
+					var email = $('#id_Email').val();
+					var description = $('#id_Description').val();
+					var thumbnail_hidden_base64 = $('#thumbnail_hidden_base64').val();
+					//Image validation
+					if ( thumbnail_hidden_base64 == "" ) {
+						$('.browse-btn button').css({'border': '1px solid red'});
+						$('#signup_notification_failure').show();
+						$('#fmessage').text("Please select company logo!");
+					}
+					else {
+						var formData = { Name: name, Address: address, Phone: phone, Country: country, Email: email, Description: description, Photo: thumbnail_hidden_base64 }; //Array 
+						$.ajax({
+							url : requestUrl,
+							type: "POST",
+							data : formData,
+							beforeSend: function(){
+								$('#signup_notification_success').hide();
+								$('#signup_notification_failure').hide();
+								$('#ccloader').show();
+							},
+							success: function(data, textStatus, jqXHR)
+							{
+								//data - response from server
+								console.log(data);
+								console.log(typeof data);
+								if ( data.Success == true ) {
+									$('#signup_notification_success').show();
+									$('.custom-form-wrap').hide();
+									$('.custom-success-message-wrapper').show();
+								}
+								else {
+									$('#signup_notification_failure').show();
+									$('#fmessage').text(data.Message);
+								}
+							},
+							complete: function(){
+								$('#ccloader').hide();
+							},
+							error: function (jqXHR, textStatus, errorThrown)
+							{
+								console.log(jqXHR);
+								console.log(textStatus);
+							}
+						});		
+					}						
+				});				
+			});
+		</script>
+	</body>
+</html>
