@@ -89,6 +89,7 @@
 			#thumbnail{object-fit: contain;}
 			.disableStyle{background-color: grey !important; color: #fff !important;}
 			.disableStyle:hover{background-color: grey !important; color: #fff !important;}
+			.signup-heading{width: 100%;}
 			
 			.footer-wrap { position: absolute; width: 100%; }
 			.footer-wrap .custom-footer { background: #ffbf0e; color: #18394E; font-size: 13px; min-height: 70px; }
@@ -760,6 +761,7 @@
 					$('.custom-width').removeClass('custom-width');
 					$('.custom_built_in_logo').css({'border': '1px solid #dee2e6'});
 					$(this).css({'border': '1px solid #18394e'});
+					$('.signup-heading').css({'width':'auto'});
 				});	
 
 				function readURL(input) {
@@ -808,7 +810,7 @@
 
 				$('#signup-form').submit(function(e){
 					e.preventDefault();
-					var requestUrl = "https://dev-frm1.circlecare.io/activity/v3.9/api/BinaryData/SignUpCorporateGroup";
+					var requestUrl = "process.php";
 					var name = $('#id_Name').val();
 					var address = $('#id_Address').val();
 					var phone = $('#id_Phone').val();
@@ -842,15 +844,19 @@
 							},
 							success: function(data, textStatus, jqXHR)
 							{
-								//data - response from server
-								if ( data.Success == true ) {
+								//data - response from server								
+								var response = JSON.parse(data);
+								if ( response.success == true ) {
 									$('#signup_notification_success').show();
 									$('.custom-form-wrap').hide();
 									$('.custom-success-message-wrapper').show();
 								}
 								else {
 									$('#signup_notification_failure').show();
-									$('#fmessage').text(data.Message);
+									if ( response.reason == 13 ) 
+										$('#fmessage').text(response.err_response);
+									else 
+										$('#fmessage').text(response.errors.message);
 								}
 							},
 							complete: function(){
