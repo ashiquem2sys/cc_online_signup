@@ -87,6 +87,8 @@
             .button-wrapper span.label { position: relative; z-index: 0; display: inline-block; width: 100%; background: #00bfff; cursor: pointer; color: #fff; padding: 10px 0; text-transform:uppercase; font-size:12px; cursor: pointer; }
             #fileinput { display: inline-block; position: absolute; z-index: 1; width: 100%; height: 38px; top: 0; left: 0; opacity: 0; cursor: pointer; }
 			#thumbnail{object-fit: contain;}
+			.disableStyle{background-color: grey !important; color: #fff !important;}
+			.disableStyle:hover{background-color: grey !important; color: #fff !important;}
 			
 			.footer-wrap { position: absolute; width: 100%; }
 			.footer-wrap .custom-footer { background: #ffbf0e; color: #18394E; font-size: 13px; min-height: 70px; }
@@ -790,12 +792,13 @@
 				});
 
 				var getDataUrl = function(img) {
-					var canvas = document.createElement('canvas');
-					canvas.width = img.width;
-					canvas.height = img.height;
-					var ctx = canvas.getContext('2d');
-					ctx.drawImage( img, 0, 0 ); 
-					return canvas.toDataURL();
+					var c = document.createElement('canvas');
+					c.height = img.naturalHeight;
+					c.width = img.naturalWidth;
+					var ctx = c.getContext('2d');
+
+					ctx.drawImage(img, 0, 0, c.width, c.height);
+					return c.toDataURL();
 				}
 
 				// Init loader: hide
@@ -834,6 +837,8 @@
 								$('#signup_notification_success').hide();
 								$('#signup_notification_failure').hide();
 								$('#ccloader').show();
+								$('#submit').prop('disabled', true);
+								$('#submit').addClass('disableStyle');
 							},
 							success: function(data, textStatus, jqXHR)
 							{
@@ -850,6 +855,8 @@
 							},
 							complete: function(){
 								$('#ccloader').hide();
+								$('#submit').prop('disabled', false);
+								$('#submit').removeClass('disableStyle');
 							},
 							error: function (jqXHR, textStatus, errorThrown)
 							{
